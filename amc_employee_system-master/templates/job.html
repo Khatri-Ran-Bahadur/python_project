@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+		<a class="btn" href="/job-add">Job Add</a>
+
+		  <h3>Job List</h3>
+		  
+		  <table class="table">
+		  	<thead>
+		  		<tr>
+			  		<th>Title</th>
+			  		<th>Description</th>
+			  		<th>Category</th>
+			  		<th>Location</th>
+			  		<th>Qualification</th>
+			  		<th>Experience Year</th>
+			  		<th>Salary</th>
+			  		<th>Job Type</th>
+			  		<th>Deadline</th>
+			  		<th>Skills</th>
+			  	</tr>
+		  	</thead>
+		  	<tbody>
+		  		{% for job in jobs %}
+		  			<tr>
+		  				<td>{{job.title}}</td>
+		  				<td>{{job.description}}</td>
+		  				<td>{{job.category}}</td>
+		  				<td>{{job.location}}</td>
+		  				<td>{{job.qualification}}</td>
+		  				<td>{{job.experience_year}}</td>
+		  				<td>{{job.salary}}</td>
+		  				<td>{{job.job_type}}</td>
+		  				<td>{{job.deadline}}</td>
+		  				<td>{{job.skills}}</td>
+		  				<td><a href="/job?id={{job.id}}">View</a>/<a href="/job-add?id={{job.id}}">Update</a></td>
+		  			</tr>
+		  		{% endfor %}
+
+		  	</tbody>
+		  </table>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  
+  {% if added %}
+  <p style="color:red;">Job Added Successfully</p>
+  {% endif %}
+
+  <p style="color:red;">{{ message }}</p>
+
+ <form action="/job-add?id={{job.id}}" method="POST">
+
+    <div class="form-group">
+      <label for="name">Title:</label>
+      <input required type="text" class="form-control" id="title" placeholder="Enter title" name="title" value="{{job.title}}">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Description:</label>
+      <input required type="text" class="form-control" id="description" placeholder="Enter description" name="description" value="{{job.description}}">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Category:</label>
+      <input required type="text" class="form-control" id="category" placeholder="Enter category" name="category" value="{{job.category}}">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Location:</label>
+      <input required type="text" class="form-control" id="description" placeholder="Enter location" name="location" value="{{job.location}}">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Qualification:</label>
+      <input required type="text" class="form-control" id="qualification" placeholder="Enter qualification" name="qualification" value="{{job.qualification}}">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Experience Year:</label>
+      <input required type="number" class="form-control" id="experience_year" placeholder="Enter experience_year" name="experience_year" value="{{job.experience_year}}">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Salary:</label>
+      <input required type="number" class="form-control" id="salary" placeholder="Enter salary" name="salary" value="{{job.salary}}">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Job Type:</label>
+      <input required type="text" class="form-control" id="job_type" placeholder="Enter job_type" name="job_type" value="{{job.job_type}}">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Deadline:</label>
+      <input required type="date" class="form-control" id="deadline" placeholder="Enter deadline" name="deadline" value="{{job.deadline}}">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Skills:</label>
+      <input required type="number" class="form-control" id="skills" placeholder="Enter skills" name="skills" value="{{job.skills}}">
+    </div>
+    
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+
+{% endblock %}

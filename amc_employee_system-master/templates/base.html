@@ -1,0 +1,54 @@
+{% load static %}
+<html>
+
+	<head>
+		<title>Employee System</title>
+		<!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+  	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  	<script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	</head>
+	<body>
+		
+
+		<nav class="navbar navbar-inverse">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">Employee System</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+		    	{% if request.user.is_authenticated %}
+			      <li class="active"><a href="#">Home</a></li>
+			      <li><a href="/employee">Employee</a></li>
+			      <li><a href="/employer">Employer</a></li>
+			      <li><a href="/job">Jobs</a></li>
+			      <li><a href="/chat-room">Chat Room</a></li>
+			      <li><a href="#">About</a></li>
+			      <li><a href="/logout/">Logout</a></li>
+
+			    {% else %}
+
+			      <li><a href="/login/">Login</a></li>
+			      <li><a href="/register/">Register</a></li>
+			    {% endif %}
+
+		    </ul>
+		  </div>
+		</nav>
+		  
+		<div class="container">
+		  
+		  {% block content %}
+
+		  {% endblock %}
+
+		</div>
+
+
+
+	</body>
+
+</html>

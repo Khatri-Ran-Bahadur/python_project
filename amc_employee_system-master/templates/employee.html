@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+		<a class="btn" href="/employee-add">Employee Add</a>
+
+		  <h3>Employee List</h3>
+		  
+		  <table class="table">
+		  	<thead>
+		  		<tr>
+			  		<th>Name</th>
+			  		<th>Email</th>
+			  		<th>Address</th>
+			  		<th>Phone</th>
+			  		<th>Action</th>
+			  	</tr>
+		  	</thead>
+		  	<tbody>
+		  		{% for emp in employees %}
+		  			<tr>
+		  				<td>{{emp.name}}</td>
+		  				<td>{{emp.email}}</td>
+		  				<td>{{emp.address}}</td>
+		  				<td>{{emp.phone}}</td>
+		  				<td><a href="/employee-add?id={{emp.id}}">Update</a> / <a href="/employee-delete?id={{emp.id}}">Delete</a></td>
+		  			</tr>
+		  		{% endfor %}
+
+		  	</tbody>
+		  </table>
+{% endblock %}

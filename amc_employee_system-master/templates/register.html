@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+    	{{message}}
+      <h1>Register :</h1>
+
+		<form method="post" action="/register/">
+	        {% csrf_token %}
+	        <div class="form-group">
+		        <label for="username">Username:</label>
+		        <input type="text" name="username">
+		    </div>
+
+		    <div class="form-group">
+		        <label for="email">Email:</label>
+		        <input type="email" name="email">
+		    </div>
+
+		    <div class="form-group">
+				<label for="password">Password:</label>
+			    <input type="password" name="password">
+			</div>
+
+			<div class="form-group">
+			    <label for="phone">Phone:</label>
+		        <input type="text" name="phone">
+		    </div>
+		    <div class="form-group">
+				<input type="submit" name="" value="Register">
+			</div>
+		</form>
+</div>
+  </div>
+{% endblock %}
+

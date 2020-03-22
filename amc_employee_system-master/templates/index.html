@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>Welcome to Employee System</h3>
+<p>Total number of employee : {{employee_count}}</p>
+<p>Total number of employer : {{employer_count}}</p>
+
+<p>
+<strong>Job you may like </strong>
+{% for job in recommended_jobs %}
+	<div class="row">
+		{{job}}
+	</div>
+{% endfor %}
+
+</p>
+
+{% endblock %}
